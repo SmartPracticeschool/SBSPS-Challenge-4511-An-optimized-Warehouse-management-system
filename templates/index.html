@@ -5,15 +5,20 @@
   <meta charset="UTF-8">
   <title>ML API</title>
   <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
-<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
-<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
-<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-<style>
-  h1{
-    text-align: center;
-  }
-</style>
+  <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <style>
+    h1{
+      text-align: center;
+    }
+    .container{
+      border: 1px solid black;
+    }
+  </style>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js"></script>
 </head>
 
 <body>
@@ -51,26 +56,31 @@
               <option value="20">Store 20</option>
 
             </select>   <br>
-      <label for="cars">Choose a Product</label>
-           <select name="product_id" id="product_id" required="required" style="width: 50%; float: right;">
-            <option value="108696">Meat</option>
-            <option value="164088">Dairy</option>
-            <option value="804098">Sea Food</option>
-            <option value="1695936">Fruits</option>
-            <option value="2032088">Flour</option>
-          </select>
+            <label for="cars">Choose a Product</label>
+                 <select name="product_id" id="product_id" required="required" style="width: 50%; float: right;">
+                  <option value="108696">Meat</option>
+                  <option value="164088">Dairy</option>
+                  <option value="804098">Sea Food</option>
+                  <option value="1695936">Fruits</option>
+                  <option value="2032088">Flour</option>
+                </select>
 
-      <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
-    </form>
+            <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+          </form>
 
 
-   <br>
-   <br>
-   {{ prediction_text }}
+         <br>
+         <br>
+         {{ prediction_text }}
+       </div>
+     </div>
  </div>
-
-
- </div>
+ <div class="chart" id="bargraph">
+    <script>
+        var graphs = {{plot | safe}};
+        Plotly.plot('bargraph',graphs,{});
+    </script>
+  </div>
 
 
 </body>

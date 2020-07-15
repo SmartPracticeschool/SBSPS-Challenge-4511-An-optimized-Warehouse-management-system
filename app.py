@@ -777,9 +777,40 @@ import warnings
 # !git clone https://github.com/Zhenye-Na/DA-RNN
 
 # --------------------------------------------------------------------------------
+import plotly
+import plotly.graph_objs as go
+
+import pandas as pd
+import numpy as np
+from flask import Flask, render_template 
+import json
+
+def create_plot(N, y_1):
+
+
+    N = N
+    x = np.linspace(0, N, N)
+    # y = np.random.randn(N)
+    y= y_1
+    # for i in range(N):
+    #     y = y + (i,)
+    df = pd.DataFrame({'x': x, 'y': y}) # creating a sample dataframe
+    # print(df)
+
+    data = [
+        go.Bar(
+            x=df['x'], # assign x as the dataframe column 'x'
+            y=df['y']
+        )
+    ]
+
+    graphJSON = json.dumps(data, cls=plotly.utils.PlotlyJSONEncoder)
+
+    return graphJSON
 @app.route('/')
-def home():
-    return render_template("index.html")
+def index():
+    
+    return render_template('index.html')
 
 @app.route('/predict',methods=['POST'])
 def predict():
@@ -796,14 +827,18 @@ def predict():
     
     pred=model.predict(read_data1(x),d)
     pred = np.absolute(pred)
-    print(pred[:d][d-1])
+    print(pred[:d])
+    y = pred[:d]
+    y_1 =()
+    for i in range(int_features[0]):
+        y_1 = y_1 + (y[i],)
+    print(type(y_1))
     pred = pred[:d][d-1]
 
 
     # output = round(prediction[0], 2)
-
-    return render_template('index.html', prediction_text='The demand forecasted : {} kg'.format(pred))
-
-
+    bar = create_plot(int_features[0], y_1)
+    return render_template('index.html', prediction_text='The demand forecasted : {} kg'.format(pred), plot=bar)
+    
 if __name__ == "__main__":
     app.run(debug=True)
