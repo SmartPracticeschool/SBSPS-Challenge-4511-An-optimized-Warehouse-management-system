@@ -1,0 +1,13 @@
+One Time Process
+systemctl start aerospike
+register module 'IBM.lua'
+register module 'IBM_pb.lua'
+register module 'tbuf.lua'
+
+aql (to start the aerospike cluster)
+execute tbuf.put_data(1,2,3,4,5,6) on test.demo where Pk='Store id'
+
+Note:-
+1. the 6 parameters are passed to tbuf.put_data
+2. test - Name of namespace
+3. demo - Name of Set

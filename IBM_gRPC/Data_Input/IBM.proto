@@ -1,0 +1,20 @@
+syntax = "proto2";
+option java_multiple_files = true;
+
+message Request {
+	required int32 Item_no = 1;
+	required int32 Store_no = 2;
+	required int32 Transactions = 3;
+	required int32 Oil_Prices = 4;
+	required bool Holiday = 5;
+	required bool Offer = 6;
+}
+
+message Response {
+	required int32 Item_no = 1;
+	required int32 unit_sales = 2;
+}
+
+service Predictor {
+    rpc Process(Request) returns (Response) {}
+}

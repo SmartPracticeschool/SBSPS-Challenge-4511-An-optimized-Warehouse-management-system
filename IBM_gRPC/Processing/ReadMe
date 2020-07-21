@@ -1,0 +1,4 @@
+python server.py (to start the server)
+python client.py -- localhost:(address) 
+
+In the Screenshots it can be seen that, this process 10k Requests in 1 sec.
