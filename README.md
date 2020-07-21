@@ -5,4 +5,13 @@ UI screenshots and video link -https://drive.google.com/drive/folders/1ZZb_R8Vp6
 Algorithm code is in the model.py file
 
 
-final data =set used is "dataset_more_features_final1.csv"
+final dataset used is "Original Dataset/dataset_more_features_final1.csv"
+
+
+UI code is in the "UI" folder
+
+
+final day review presentation is in "IBM-ppt.pptx"
+
+
+final report-"SBSPS_Challenge_4511.pdf"
