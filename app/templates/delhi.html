@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>NexuSolution</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+  <link href="https://fonts.googleapis.com/css?family=Muli:300,400,700,900" rel="stylesheet">
+  <link rel="stylesheet" href="/static/fonts/icomoon/style.css">
+
+  <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/static/css/jquery-ui.css">
+  <link rel="stylesheet" href="/static/css/owl.carousel.min.css">
+  <link rel="stylesheet" href="/static/css/owl.theme.default.min.css">
+  <link rel="stylesheet" href="/static/css/owl.theme.default.min.css">
+
+  <link rel="stylesheet" href="/static/css/jquery.fancybox.min.css">
+
+  <link rel="stylesheet" href="/static/css/bootstrap-datepicker.css">
+
+  <link rel="stylesheet" href="/static/fonts/flaticon/font/flaticon.css">
+
+  <link rel="stylesheet" href="/static/css/aos.css">
+  <link href="/static/css/jquery.mb.YTPlayer.min.css" media="all" rel="stylesheet" type="text/css">
+
+  <link rel="stylesheet" href="/static/css/style.css">
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js"></script>
+
+
+
+
+</head>
+
+<body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
+
+  <div class="site-wrap">
+
+    <div class="site-mobile-menu site-navbar-target">
+      <div class="site-mobile-menu-header">
+        <div class="site-mobile-menu-close mt-3">
+          <span class="icon-close2 js-menu-toggle"></span>
+        </div>
+      </div>
+      <div class="site-mobile-menu-body"></div>
+    </div>
+
+
+    <div class="py-2 bg-light">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-9 d-none d-lg-block">
+            <a href="tel:7606814973" class="small mr-3" style="font-size: 1.1em"><span class="icon-phone2 mr-2"></span>+91 7606814973</a> 
+            <a href="mailto:krishnakumar76068@gmail.com" class="small mr-3" style="font-size: 1.1em"><span class="icon-envelope-o mr-2"></span> krishnakumar76068@gmail.com</a> 
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <header class="site-navbar py-4 js-sticky-header site-navbar-target" role="banner">
+
+      <div class="container">
+        <div class="d-flex align-items-center">
+          <div class="site-logo">
+            <a href="#" class="d-block">
+              <img  src="/static/images/logo.png" alt="Image" class="img-fluid">
+            </a>
+          </div>
+
+          <div class="ml-auto">
+            <a href="http://127.0.0.1:5000/" style="font-weight: bold; font-size: 1.3em">Change Location</a>
+            <a href="http://localhost/IBM/" style="font-weight: bold; margin-left: 30px; font-size: 1.3em">Logout</a>  
+          </div>
+
+          </div>
+        </div>
+
+      </header>
+
+
+      <div class="hero-slide owl-carousel site-blocks-cover">
+        <div class="intro-section" style="background-image: url('/static/images/hero_1.jpg');">
+          <div class="container">
+            <div class="row align-items-center justify-content-center">
+              <div class="col-md-7 mx-auto text-center" data-aos="fade-up">
+                <h1>Welcome to Delhi Warehouse Demand Forecast</h1>
+                <p><a href="#prediction_section" class="btn btn-primary">Get Started</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="intro-section" style="background-image: url('/static/images/hero_2.png');">
+          <div class="container">
+            <div class="row align-items-center justify-content-center">
+              <div class="col-md-7 mx-auto text-center" data-aos="fade-up">
+                <div class="intro">
+                  <h1>Lets Predict</h1>
+                  <p><a href="#prediction_section" class="btn btn-primary">Get Started</a></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="login container" id="prediction_section" style="margin-top: 50px;">
+      <h1 style="text-align: center;">Demand Forecast for Delhi Warehouse</h1>
+      <div class="row">
+        <div class="col-lg-2 col-sm-2">
+        </div>
+        <div class="col-lg-8 col-sm-8" >
+         <!-- Main Input For Receiving Query to our ML -->
+        <form action="{{ url_for('predict')}}" method="post" >
+          <div class="label_info">
+            <label>Enter the date of forecast: </label>
+            <input type="date" name="experience" placeholder="Enter day  " required="required" style="width: 50%; float: right;" /><br>
+          </div>
+          <div class="label_info">
+              <label for="cars">Enter the store Number</label>
+                 <select name="stores" id="stores" required="required" style="width: 50%; float: right;">
+                  <option value="0" disabled selected hidden>Choose a store</option>
+                  <option value="20">Delhi STORE 1</option>
+                  <option value="21">Delhi STORE 2</option>
+                  <option value="22">Delhi STORE 3</option>
+                  <option value="23">Delhi STORE 4</option>
+                  <option value="24">Delhi STORE 5</option>
+                  <option value="25">Delhi STORE 6</option>
+                  <option value="26">Delhi STORE 7</option>
+                  <option value="27">Delhi STORE 8</option>
+                  <option value="28">Delhi STORE 9</option>
+                  <option value="29">Delhi STORE 10</option>
+                  
+
+                </select>
+          </div>
+                <button type="submit" class="et_pb_button" value="108696" name="product_id" id="product_id" required="required" >Meat</button>
+                <button type="submit" class="et_pb_button" value="164088" name="product_id" id="product_id" required="required" >Dairy</button>
+                <button type="submit" class="et_pb_button" value="804098" name="product_id" id="product_id" required="required" >Sea Food</button>
+                <button type="submit" class="et_pb_button" value="1695936" name="product_id" id="product_id" required="required" >Fruits</button>
+                <button type="submit" class="et_pb_button" value="2032088" name="product_id" id="product_id" required="required" >Flour</button>
+          </form>
+
+
+             <br>
+             <br>
+             {{ prediction_text }}
+           </div>
+           <div class="col-lg-2"></div> 
+         </div>
+        </div>
+        <div class="chart" id="bargraph">
+          <script>
+              var graphs = {{plot | safe}};
+              Plotly.plot('bargraph',graphs,{});
+          </script>
+          </div>
+
+      <div class="site-section bg-light pb-0">
+        <div class="container">
+          <div class="row mb-5 justify-content-center text-center">
+            <div class="col-lg-4">
+              <span class="caption">Our Services</span>
+              <h2 class="title-with-line text-center mb-5">What Predictor Can Do</h2>                
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-4 col-md-6">
+
+              <div class="feature-1">
+                <div class="icon-wrapper bg-primary">
+
+                  <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-bar-chart-line" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" d="M4 11H2v3h2v-3zm5-4H7v7h2V7zm5-5h-2v12h2V2zm-2-1a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1h-2zM6 7a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7zm-5 4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1v-3z"/>
+                    <path fill-rule="evenodd" d="M0 14.5a.5.5 0 0 1 .5-.5h15a.5.5 0 0 1 0 1H.5a.5.5 0 0 1-.5-.5z"/>
+                  </svg>
+                </div>
+                <div class="feature-1-content">
+                  <h2>Growth Analyzer</h2>
+                  <p>Analyzes historical data of demands for different products in different stores</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+              <div class="feature-1">
+                <div class="icon-wrapper bg-primary">
+                  <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-circle-square" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0 6a6 6 0 1 1 12 0A6 6 0 0 1 0 6z"/>
+                    <path d="M12.93 5h1.57a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5v-1.57a6.953 6.953 0 0 1-1-.22v1.79A1.5 1.5 0 0 0 5.5 16h9a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 4h-1.79c.097.324.17.658.22 1z"/>
+                  </svg>
+                </div>
+                <div class="feature-1-content">
+                  <h2>Advanced Prediction</h2>
+                  <p>Trained using NN so as to get higher accuracy in predicting demand</p>
+                </div>
+              </div> 
+            </div>
+            <div class="col-lg-4 col-md-6">
+              <div class="feature-1">
+                <div class="icon-wrapper bg-primary">
+                  <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-calculator-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" d="M12 1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM4 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H4z"/>
+                    <path d="M4 2.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5h-7a.5.5 0 0 1-.5-.5v-2zm0 4a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm0 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm0 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm3-6a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm0 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm0 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm3-6a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm0 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-4z"/>
+                  </svg>
+                </div>
+                <div class="feature-1-content">
+                  <h2>Demand Calculations</h2>
+                  <p>Uses trained path and feds required field to predict the demand of required product</p>
+                </div>
+              </div> 
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-6">
+              <p class="mb-4"><h3>NexuSolution</h3></p>
+              <p>We are an independent freelancing team engaged in making and deploying  world - class solution with the help  of Artificial Intelligence , to generate state of the art  solutions for the diverse problem of the society.</p>
+            </div>
+            <div class="col-lg-6" style="text-align: center;">
+              <h3 class="footer-heading">Contact</h3>
+              <ul class="list-unstyled">
+                <li><a href="#">Facebook</a></li>
+                <li><a href="#">Instagram</a></li>
+                <li><a href="#">LinkedIn</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-12">
+              <div class="copyright">
+                <p>
+                  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | Nexus</a>
+                  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+    <!-- .site-wrap -->
+
+
+    <!-- loader -->
+    <div id="loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#51be78"/></svg></div>
+
+    
+
+    <script src="/static/js/jquery-3.3.1.min.js"></script>
+    <script src="/static/js/jquery-migrate-3.0.1.min.js"></script>
+    <script src="/static/js/jquery-ui.js"></script>
+    <script src="/static/js/popper.min.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+    <script src="/static/js/owl.carousel.min.js"></script>
+    <script src="/static/js/jquery.stellar.min.js"></script>
+    <script src="/static/js/jquery.countdown.min.js"></script>
+    <script src="/static/js/bootstrap-datepicker.min.js"></script>
+    <script src="/static/js/jquery.easing.1.3.js"></script>
+    <script src="/static/js/aos.js"></script>
+    <script src="/static/js/jquery.fancybox.min.js"></script>
+    <script src="/static/js/jquery.sticky.js"></script>
+    <script src="/static/js/jquery.mb.YTPlayer.min.js"></script>
+
+
+
+
+    <script src="/static/js/main.js"></script>
+
+  </body>
+
+  </html>
+

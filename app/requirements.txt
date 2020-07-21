@@ -1,0 +1,8 @@
+Flask
+plotly==4.8.2
+pandas==1.0.4
+numpy==1.18.1
+matplotlib==3.2.1
+scikit-learn
+torch
+pip==20.1.1
