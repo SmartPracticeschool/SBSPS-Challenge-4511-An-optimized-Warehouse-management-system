@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Grunt &mdash; Website Template by Colorlib</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900" rel="stylesheet">
+    <link rel="stylesheet" href="/static/region/fonts/icomoon/style.css">
+    <link rel="stylesheet" href="/static/region/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/region/css/animate.css">
+    <link rel="stylesheet" href="/static/region/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="/static/region/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="/static/region/css/bootstrap-datepicker.css">
+    
+    
+    <link rel="stylesheet" href="/static/region/fonts/flaticon/font/flaticon.css">
+  
+    <link rel="stylesheet" href="/static/region/css/aos.css">
+    <link rel="stylesheet" href="/static/region/css/jquery.fancybox.min.css">
+    
+
+    <link rel="stylesheet" href="/static/region/css/style.css">
+      <style type="text/css">
+		    body{
+		      background: url('/static/region/images/map.jpg') no-repeat center fixed;     
+		      background-size: cover;	
+		    }
+  	</style>
+    
+  </head>
+  <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
+   <!-- END .site-navbar-wrap -->
+    <div class="site-section" id="what-we-do-section">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-lg-6 section-title">
+            <span style="color: black" class="sub-title mb-2 d-block"><h4>Good Morning</h4></span>
+            <h2 class="title text-primary">Choose Your Region : 	</h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-10 ml-auto">
+            <div class="row">
+            <form action="{{ url_for('select')}}" method="post" style="width: 100%">
+              <div class="col-md-6 col-lg-4 mb-4 mb-lg-4" style="float: left;">
+                <div class="service h-100">
+                  <h3>PURI</h3>
+                  <p>Puri  is the district headquarters of Puri district situated 60 kilometres south of Bhubaneswar. </p>
+                  <button type="submit" class="btn btn-primary btn-block btn-large" value="1" name="product_id" id="product_id" required="required" >CHOOSE</button>
+                </div>
+              </div>
+              <div class="col-md-6 col-lg-4 mb-4 mb-lg-4"style="float: left;">
+                <div class="service h-100">
+                  <h3>BHUBANESHWAR</h3>
+                  <p>Bhubaneswar is an ancient city in India’s eastern state of Odisha, formerly Orissa.</p>
+                  <button type="submit" class="btn btn-primary btn-block btn-large" value="2" name="product_id" id="product_id" required="required" >CHOOSE</button>
+                </div>
+              </div>
+              <div class="col-md-6 col-lg-4 mb-4 mb-lg-4"style="float: left;">
+                <div class="service h-100">
+                  <h3>DELHI</h3>
+                  <p>Delhi, India’s capital territory, is a massive metropolitan area in the country’s north</p>
+                  <button type="submit" class="btn btn-primary btn-block btn-large" value="3" name="product_id" id="product_id" required="required" >CHOOSE</button>
+                </div>
+              </div>
+          	</form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/static/region/js/jquery-3.3.1.min.js"></script>
+  <script src="/static/region/js/popper.min.js"></script>
+  <script src="/static/region/js/bootstrap.min.js"></script>
+  <script src="/static/region/js/owl.carousel.min.js"></script>
+  <script src="/static/region/js/aos.js"></script>
+  <script src="/static/region/js/jquery.sticky.js"></script>
+  <script src="/static/region/js/stickyfill.min.js"></script>
+  <script src="/static/region/js/jquery.easing.1.3.js"></script>
+  <script src="/static/region/js/isotope.pkgd.min.js"></script>
+  
+  <script src="/static/region/js/jquery.fancybox.min.js"></script>
+  <script src="/static/region/js/main.js"></script>
+
+     
+  </body>
+</html>

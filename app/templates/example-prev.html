@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>example</title>
+	<link rel="stylesheet" type="text/css" href="/static/css/zstyle.css">
+</head>
+<body>
+	Choose the region:
+  <form action="{{ url_for('select')}}" method="post" style="width: 100%">
+    <button type="submit" class="btn btn-primary btn-block btn-large" value="1" name="product_id" id="product_id" required="required" >Puri</button>
+    <button type="submit" class="btn btn-primary btn-block btn-large" value="2" name="product_id" id="product_id" required="required" >Bhubaneshwar</button>
+    <button type="submit" class="btn btn-primary btn-block btn-large" value="3" name="product_id" id="product_id" required="required" >Delhi</button>
+  </form>
+</body>
+</html>
