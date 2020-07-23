@@ -1,12 +1,11 @@
-function put_data(rec, Item_no, Store_no, Transactions, Oil_prices, Holiday, Offer)
-  local targeted_cards_pb = require "IBM_pb"
+function put_data(rec, Transactions, Oil_Prices, Holiday, Offer)
+  local IBM_pb = require "IBM_pb"
   -- Serialize Example
   local msg = IBM_pb.Request()
-  msg.Item_no = Item_no
-  msg.Store_no = Store_no
   msg.Transactions = Transactions
-  msg.Oil_prices = Oil_prices
+  msg.Oil_Prices = Oil_Prices
   msg.Holiday = Holiday
+  msg.Offer = Offer
   local pb_data = msg:SerializeToString()
   local pb_bytes = bytes(pb_data:len())
   bytes.set_type(pb_bytes, 4)
