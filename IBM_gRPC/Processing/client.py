@@ -52,7 +52,7 @@ def run_worker_query(x):
     global ctr
     ctr = ctr + 1
     #print(ctr)
-    request = IBM_pb2.Request(Item_no = 15,Store_no = 11,Transactions = 12,Oil_Prices = 81,Holiday = True,Offer = False)
+    request = IBM_pb2.Request(Transactions = 12,Oil_Prices = 81,Holiday = 1,Offer = 1)
     response = Stub.Process(request = request)
     response = response.SerializeToString()
     return response

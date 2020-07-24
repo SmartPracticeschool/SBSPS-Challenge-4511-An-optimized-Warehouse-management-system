@@ -15,9 +15,9 @@ import sys
 import grpc
 
 # import the generated classes
+import calculator
 import IBM_pb2
 import IBM_pb2_grpc
-import adscorer
 # create a class to define the server functions, derived from
 # calculator_pb2_grpc.CalculatorServicer
 
@@ -29,8 +29,9 @@ THREAD_CONCURRENCY = PROCESS_COUNT
 class PredictorServicer(IBM_pb2_grpc.Predictor):
     def Process(self, request, context):
         response = IBM_pb2.Response()
-        response.Item_no = 1
-        response.unit_sales = 5
+        a = calculator.function()
+        response.unit_sales = a
+        print(response)
         return response
 
 def _wait_forever(server):
@@ -39,7 +40,6 @@ def _wait_forever(server):
             time.sleep(ONE_DAY.total_seconds())
     except KeyboardInterrupt:
         server.stop(None)
-
 
 def _run_server(bind_address):
     """Start a server in a subprocess."""
