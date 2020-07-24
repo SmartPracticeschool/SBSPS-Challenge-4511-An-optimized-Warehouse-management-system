@@ -25,5 +25,10 @@ function verify_data(rec)
   local pb_data = bytes.get_string(pb_bytes, 1, bytes.size(pb_bytes))
   local msg = IBM_pb.Request()
   msg:ParseFromString(pb_data)
-  return msg.Transactions
+  local returnMap = map()
+  returnMap.Transactions = msg.Transactions
+  returnMap.Oil_Prices = msg.Oil_Prices
+  returnMap.Holiday = msg.Holiday
+  returnMap.Offer = msg.Offer
+  return returnMap
 end
