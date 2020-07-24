@@ -17,3 +17,13 @@ function put_data(rec, Transactions, Oil_Prices, Holiday, Offer)
     aerospike:create(rec)
   end
 end
+
+function verify_data(rec)
+  local IBM_pb = require "IBM_pb"
+  -- Parse Example
+  local pb_bytes = rec["store_details"]
+  local pb_data = bytes.get_string(pb_bytes, 1, bytes.size(pb_bytes))
+  local msg = IBM_pb.Request()
+  msg:ParseFromString(pb_data)
+  return msg.Transactions
+end
